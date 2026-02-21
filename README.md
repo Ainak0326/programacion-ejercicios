@@ -1,4 +1,4 @@
-# Programacion Aimara - Guia General
+# Programacion - Guia General
 
 Este repositorio contiene 2 ejercicios independientes. Cada uno tiene su propio `README.md` y dependencias.
 
@@ -86,7 +86,3 @@ Host: `http://localhost:4200/`
 npm run build
 npm run build:all
 ```
-
-## Nota
-
-Si ya tienes dependencias instaladas previamente en un ejercicio, puedes omitir `npm install`.
