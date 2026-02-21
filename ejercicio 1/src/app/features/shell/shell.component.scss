@@ -1,0 +1,127 @@
+﻿:host {
+  display: block;
+}
+
+.shell {
+  --bg-base: #f8fafc;
+  --bg-overlay: rgba(255, 255, 255, 0.72);
+  --text-main: #0f172a;
+  --text-soft: #334155;
+  --border: #cbd5e1;
+  --card-bg: #ffffff;
+  --card-bg-alt: #ecfeff;
+  --card-border: #cbd5e1;
+  --item-border: #e2e8f0;
+  --card-text: #0f172a;
+  --card-soft: #334155;
+  --hint-bg: #f0f9ff;
+  --hint-border: #bae6fd;
+  --hint-text: #0f172a;
+  --active-bg: #0f766e;
+  --active-text: #ecfeff;
+
+  min-height: 100vh;
+  color: var(--text-main);
+  background:
+    radial-gradient(70rem 28rem at -10% -10%, #7dd3fc 0%, transparent 55%),
+    radial-gradient(58rem 22rem at 110% -15%, #99f6e4 0%, transparent 52%),
+    linear-gradient(180deg, var(--bg-base), #ffffff 55%);
+  transition: background 0.25s ease, color 0.2s ease;
+}
+
+.shell.dark {
+  --bg-base: #020617;
+  --bg-overlay: rgba(2, 6, 23, 0.68);
+  --text-main: #e2e8f0;
+  --text-soft: #cbd5e1;
+  --border: #1e293b;
+  --card-bg: #0f172a;
+  --card-bg-alt: #111827;
+  --card-border: #334155;
+  --item-border: #334155;
+  --card-text: #e2e8f0;
+  --card-soft: #94a3b8;
+  --hint-bg: #0b1120;
+  --hint-border: #1e3a8a;
+  --hint-text: #dbeafe;
+  --active-bg: #22d3ee;
+  --active-text: #082f49;
+
+  background:
+    radial-gradient(65rem 26rem at -10% -15%, #0f766e 0%, transparent 50%),
+    radial-gradient(50rem 20rem at 105% -10%, #1d4ed8 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-base), #0b1220 60%);
+}
+
+.shell__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+}
+
+.shell__header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.shell__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--border);
+  background: var(--bg-overlay);
+  color: var(--text-main);
+  border-radius: 0.45rem;
+  padding: 0.38rem 0.62rem;
+  cursor: pointer;
+}
+
+.theme-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.shell__header nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.shell__header a {
+  text-decoration: none;
+  color: var(--text-soft);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+.shell__header a.active {
+  background: var(--active-bg);
+  color: var(--active-text);
+}
+
+.shell__body {
+  padding: 1rem;
+}
+
+.hint {
+  margin: 0 0 0.8rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--hint-border);
+  border-radius: 0.55rem;
+  background: var(--hint-bg);
+  color: var(--hint-text);
+  font-size: 0.9rem;
+}

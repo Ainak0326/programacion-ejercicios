@@ -1,0 +1,25 @@
+﻿<section class="shell" [class.dark]="theme() === 'dark'">
+  <header class="shell__header">
+    <h1>Financial Monitor</h1>
+    <div class="shell__actions">
+      <button type="button" class="theme-btn" (click)="toggleTheme()">
+        <span class="theme-icon">{{ theme() === 'dark' ? '☀' : '☾' }}</span>
+        <span>{{ theme() === 'dark' ? 'Tema Claro' : 'Tema Oscuro' }}</span>
+      </button>
+      <nav>
+        <a routerLink="/dashboard" routerLinkActive="active">Dashboard Tiempo Real</a>
+        <a routerLink="/transactions" routerLinkActive="active">CRUD Transacciones</a>
+        <a routerLink="/remote-dashboard" routerLinkActive="active">MFE Remoto 1</a>
+        <a routerLink="/remote-transactions" routerLinkActive="active">MFE Remoto 2</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell__body">
+    <p class="hint">
+      Para validar el ejercicio, usa primero <strong>Dashboard Tiempo Real</strong> y
+      <strong>CRUD Transacciones</strong>. Las rutas MFE Remoto son solo demostracion de federacion.
+    </p>
+    <router-outlet />
+  </main>
+</section>

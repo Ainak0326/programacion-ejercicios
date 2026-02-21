@@ -1,0 +1,7 @@
+﻿<section class="remote-unavailable">
+  <h2>Remoto no disponible: {{ remote }}</h2>
+  <p>No se pudo cargar el micro-frontend en este momento.</p>
+  <p>Asegurate de ejecutarlo en otra terminal en el puerto {{ port }}.</p>
+  <pre *ngIf="remote === 'mfe-dashboard'">npm run start:mfe-dashboard</pre>
+  <pre *ngIf="remote === 'mfe-transactions'">npm run start:mfe-transactions</pre>
+</section>

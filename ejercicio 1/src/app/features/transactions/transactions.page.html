@@ -1,0 +1,22 @@
+﻿<section class="transactions-page" *ngIf="transactions$ | async as items">
+  <header>
+    <h2>CRUD de transacciones (NgRx Entity)</h2>
+    <p>Total en vista: {{ items.length }}</p>
+  </header>
+
+  <div class="actions">
+    <button type="button" (click)="addOne()">Crear</button>
+    <button type="button" (click)="updateFirst(items)">Actualizar primera</button>
+    <button type="button" (click)="deleteFirst(items)">Eliminar primera</button>
+    <button type="button" class="danger" (click)="clearAll()">Limpiar</button>
+  </div>
+
+  <ul>
+    <li *ngFor="let tx of items">
+      <span>{{ tx.id }}</span>
+      <strong>{{ tx.type }}</strong>
+      <span>{{ tx.amount | number: '1.2-2' }}</span>
+      <small>{{ tx.timestamp | date: 'HH:mm:ss.SSS' }}</small>
+    </li>
+  </ul>
+</section>

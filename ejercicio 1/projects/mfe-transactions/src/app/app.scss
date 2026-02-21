@@ -1,0 +1,16 @@
+﻿:host {
+  display: block;
+  color: var(--card-text, #0f172a);
+}
+
+.mfe-card {
+  border: 1px solid var(--card-border, #22c55e);
+  background: linear-gradient(135deg, var(--card-bg-alt, #f0fdf4), var(--card-bg, #ffffff));
+  color: var(--card-text, #0f172a);
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+code {
+  color: var(--card-soft, #0f766e);
+}

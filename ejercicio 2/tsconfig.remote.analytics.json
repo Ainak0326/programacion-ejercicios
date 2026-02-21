@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/remote-analytics"
+  },
+  "include": [
+    "remotes/analytics/src/**/*.ts",
+    "src/app/plugins/plugin.types.ts",
+    "src/app/plugins/widget-config.token.ts"
+  ]
+}

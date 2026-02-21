@@ -1,0 +1,62 @@
+﻿:host {
+  display: block;
+  color: var(--card-text, #0f172a);
+}
+
+.remote-dashboard {
+  display: grid;
+  gap: 0.8rem;
+  border: 1px solid var(--card-border, #0ea5e9);
+  border-radius: 0.8rem;
+  padding: 0.9rem;
+  background: linear-gradient(140deg, var(--card-bg-alt, #f0f9ff), var(--card-bg, #ffffff));
+}
+
+header h2 {
+  margin: 0;
+}
+
+header p {
+  margin: 0.3rem 0 0;
+  color: var(--card-soft, #0c4a6e);
+}
+
+.metrics {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.metrics article,
+.grid article {
+  border: 1px solid var(--item-border, #bae6fd);
+  border-radius: 0.6rem;
+  padding: 0.55rem;
+  background: var(--card-bg, #ffffff);
+  color: var(--card-text, #0f172a);
+}
+
+.grid {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+}
+
+.neg {
+  color: #f87171;
+}

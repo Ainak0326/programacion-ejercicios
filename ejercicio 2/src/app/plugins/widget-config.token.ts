@@ -1,0 +1,1 @@
+export const WIDGET_CONFIG = "WIDGET_CONFIG";

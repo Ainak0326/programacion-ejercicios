@@ -1,0 +1,74 @@
+﻿<section class="dashboard">
+  <div class="metrics">
+    <app-metric-card
+      [title]="'Balance total'"
+      [value]="(totalBalance$ | async) ?? 0"
+      [suffix]="'USD'"
+    />
+    <app-metric-card
+      [title]="'Promedio movil (10s)'"
+      [value]="(movingAverage$ | async) ?? 0"
+      [suffix]="'USD'"
+    />
+    <app-metric-card
+      [title]="'Error de feed'"
+      [value]="(feedError$ | async) ? 1 : 0"
+      [suffix]="(feedError$ | async) ? 'activo' : 'ok'"
+    />
+    <app-metric-card
+      [title]="'Rafaga actual'"
+      [value]="(txPerSecond$ | async) ?? 0"
+      [suffix]="'tx/s'"
+    />
+  </div>
+
+  <div class="panel" *ngIf="streamsVm$ | async as vm">
+    <article>
+      <h2>Precios</h2>
+      <ul>
+        <li *ngFor="let tick of vm.prices">
+          <strong>{{ tick.symbol }}</strong>
+          <span>{{ tick.price | number: '1.2-2' }}</span>
+          <small [class.negative]="tick.changePercent < 0">{{ tick.changePercent }}%</small>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Alertas</h2>
+      <ul>
+        <li *ngFor="let alert of vm.alerts">
+          <strong>{{ alert.level }}</strong>
+          <span>{{ alert.message }}</span>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h2>Usuarios</h2>
+      <ul>
+        <li *ngFor="let user of vm.users">
+          <strong>{{ user.name }}</strong>
+          <span>{{ user.role }}</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+
+  <article class="risk" *ngIf="riskProjection$ | async as risk">
+    <h2>Proyeccion de riesgo (Web Worker)</h2>
+    <p>Pendiente siguiente: {{ risk.projectedNext | number: '1.2-2' }}</p>
+    <p>R2: {{ risk.r2 | number: '1.2-2' }} | Muestras: {{ risk.sampleSize }}</p>
+  </article>
+
+  <article>
+    <h2>Ultimas transacciones</h2>
+    <ul class="transactions">
+      <li *ngFor="let tx of (recentTransactions$ | async)">
+        <strong>{{ tx.type }}</strong>
+        <span>{{ tx.amount | number: '1.2-2' }}</span>
+        <small>{{ tx.timestamp | date: 'HH:mm:ss.SSS' }}</small>
+      </li>
+    </ul>
+  </article>
+</section>

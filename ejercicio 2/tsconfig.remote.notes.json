@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/remote-notes"
+  },
+  "include": [
+    "remotes/notes/src/**/*.ts",
+    "src/app/plugins/plugin.types.ts",
+    "src/app/plugins/widget-config.token.ts"
+  ]
+}

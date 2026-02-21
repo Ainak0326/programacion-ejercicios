@@ -1,0 +1,54 @@
+﻿<section class="remote-dashboard" *ngIf="vm$ | async as vm">
+  <header>
+    <h2>MFE Dashboard (Tiempo Real)</h2>
+    <p>Rafaga: {{ vm.txState.txPerSecond }} tx/s</p>
+  </header>
+
+  <div class="metrics">
+    <article>
+      <h3>Balance total</h3>
+      <strong>{{ vm.txState.balance | number: '1.2-2' }} USD</strong>
+    </article>
+    <article>
+      <h3>Promedio movil 10s</h3>
+      <strong>{{ vm.txState.movingAvg | number: '1.2-2' }} USD</strong>
+    </article>
+    <article>
+      <h3>Usuarios conectados</h3>
+      <strong>{{ vm.users.length }}</strong>
+    </article>
+  </div>
+
+  <div class="grid">
+    <article>
+      <h3>Precios</h3>
+      <ul>
+        <li *ngFor="let p of vm.prices">
+          <span>{{ p.symbol }}</span>
+          <span>{{ p.price | number: '1.2-2' }}</span>
+          <small [class.neg]="p.changePercent < 0">{{ p.changePercent }}%</small>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Alertas</h3>
+      <ul>
+        <li *ngFor="let a of vm.alerts">
+          <strong>{{ a.level }}</strong>
+          <span>{{ a.message }}</span>
+        </li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>Ultimas transacciones</h3>
+      <ul>
+        <li *ngFor="let tx of vm.txState.txs">
+          <span>{{ tx.type }}</span>
+          <span>{{ tx.amount | number: '1.2-2' }}</span>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>
